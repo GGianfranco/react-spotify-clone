@@ -1,0 +1,167 @@
+.tracksTable {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: $grid-template-columns-mobile;
+  grid-template-rows: 36px auto;
+  grid-auto-rows: 1fr;
+  gap: 16px 16px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tableHeader tableHeader tableHeader tableHeader tableHeader"
+    "tracks tracks tracks tracks tracks";
+  color: $secondary-font-color;
+
+  .tableHeader {
+    grid-area: tableHeader;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: $grid-template-columns-mobile;
+    gap: 16px 16px;
+    align-items: center;
+
+    font-size: $small-font-size;
+    font-weight: $small-font-weight;
+    letter-spacing: 0.1em;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .index {
+      @include flex-center(row);
+    }
+  }
+
+  .tracks {
+    grid-area: tracks;
+
+    .track {
+      padding: 0 16px;
+      grid-area: track;
+      border-radius: 4px;
+      height: 56px;
+
+      display: grid;
+      grid-template-columns: $grid-template-columns-mobile;
+      gap: 16px 16px;
+      align-items: center;
+
+      font-size: $medium-font-size;
+      font-weight: $small-font-weight;
+      line-height: $large-font-size;
+      letter-spacing: normal;
+      text-transform: none;
+
+      &:hover {
+        background-color: $playlist-card-overlay;
+
+        .title,
+        .album {
+          color: $primary-font-color;
+        }
+
+        .playButton,
+        .pauseButton,
+        .likeButton {
+          display: block;
+        }
+
+        .trackNumber {
+          display: none;
+        }
+      }
+
+      .playButton,
+      .likeButton {
+        display: none;
+      }
+
+      .playButton,
+      .pauseButton {
+        color: $primary-font-color;
+      }
+
+      .cover {
+        @include flex-start(row);
+
+        & > img {
+          width: 40px;
+          height: 40px;
+          margin: 0 16px 0 0;
+        }
+
+        .title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          row-gap: 3px;
+
+          .name {
+            color: $primary-font-color;
+            font-size: 16px;
+          }
+
+          .artists {
+            @include text-underline-on-hover-with-pointer;
+          }
+        }
+      }
+
+      .duration {
+        .likeButton {
+          @include whiten-on-hover-without-pointer;
+          color: $secondary-font-color;
+          margin: 0 16px 0 0;
+        }
+      }
+    }
+  }
+
+  .index {
+    justify-self: center;
+
+    & > * {
+      font-size: 16px;
+    }
+  }
+
+  .album,
+  .dateAdded {
+    display: none;
+  }
+
+  .cover,
+  .album,
+  .dateAdded {
+    justify-self: start;
+  }
+
+  .duration {
+    @include flex-end(row);
+    justify-self: end;
+  }
+
+  @media screen and (min-width: 879px) {
+    .tableHeader,
+    .tracks .track {
+      grid-template-columns: $grid-template-columns-tablet;
+    }
+
+    .album {
+      display: grid;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .tableHeader,
+    .tracks .track {
+      grid-template-columns: $grid-template-columns-desktop;
+    }
+
+    .dateAdded {
+      display: grid;
+    }
+  }
+}

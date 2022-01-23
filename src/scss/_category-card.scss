@@ -1,0 +1,46 @@
+.categoryCard {
+  @include flex-space-between(column);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  row-gap: 16px;
+
+  .categoryTitle {
+    color: $primary-font-color;
+    font-size: 24px;
+    letter-spacing: -0.04em;
+    line-height: 1.3em;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    padding: 16px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .categoryCover {
+    right: 0;
+    -webkit-transform: rotate(25deg) translate(18%, -2%);
+    transform: rotate(25deg) translate(18%, -2%);
+
+    bottom: 0;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    height: 100px;
+    position: absolute;
+    width: 100px;
+
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center center;
+    object-position: center center;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

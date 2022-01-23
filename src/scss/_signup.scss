@@ -1,0 +1,97 @@
+.signUp {
+  @include fit-parent;
+  @include flex-start(column);
+  background-color: $primary-font-color;
+
+  .MuiButton-root {
+    height: 40px;
+    border-radius: 500px;
+    text-transform: uppercase;
+    font-size: $medium-font-size;
+    font-weight: $medium-font-weight;
+    letter-spacing: 1px;
+  }
+
+  .signUpHeader {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #d9dadc;
+    margin-bottom: 30px;
+    @include flex-center(row);
+
+    .signUpLogo {
+      width: 180px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .signUpContent {
+    @include flex-start(column);
+    width: 400px;
+    height: 100%;
+
+    .signUpToContinue {
+      @include flex-center(column);
+      row-gap: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+
+      span {
+        font-size: 14px;
+        font-weight: 900;
+      }
+    }
+
+    .signUpForm {
+      @include flex-start(column);
+      row-gap: 25px;
+      width: 100%;
+
+      label {
+        row-gap: 5px;
+        width: 100%;
+        font-size: $medium-font-size;
+        font-weight: $medium-font-weight;
+
+        & > * {
+          width: 100%;
+        }
+      }
+
+      input {
+        height: 40px;
+        width: 100%;
+        padding: 6px 12px;
+      }
+    }
+
+    .divider {
+      width: 100%;
+      margin: 20px 0;
+
+      hr {
+        width: 100%;
+        border-width: 1px 0 0 0;
+        border-color: $primary-border-color;
+        opacity: 0.5;
+      }
+    }
+
+    .dontHaveAnAccount {
+      @include flex-center(column);
+      row-gap: 10px;
+      width: 100%;
+      margin-top: 20px;
+
+      span {
+        font-size: $medium-font-size;
+        font-weight: $large-font-weight;
+      }
+    }
+  }
+}

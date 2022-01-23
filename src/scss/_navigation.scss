@@ -1,0 +1,92 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  @include fit-parent;
+  background-color: $secondary-bg-color;
+  color: $secondary-font-color;
+  min-height: 509px;
+  padding-top: 24px;
+
+  img {
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+
+  .banner {
+    width: 100%;
+    height: 65px;
+    padding: 0 24px 18px 24px;
+
+    img {
+      display: block;
+      width: auto;
+      height: 39px;
+    }
+  }
+
+  ul {
+    @include zero-margin-padding;
+    list-style: none;
+
+    &:nth-of-type(2) {
+      padding: 24px 0 0 0;
+    }
+
+    li {
+      @include flex-start(row);
+      width: 100%;
+      height: 40px;
+      padding: 0 24px;
+      transition-duration: 0.2s;
+      transition-property: color;
+      transition-timing-function: linear;
+
+      @include whiten-on-hover-with-pointer;
+
+      .navButton {
+        @include flex-start(row);
+        column-gap: 15px;
+
+        .navButtonLogo {
+          width: 24px;
+          height: 24px;
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .navButtonLabel {
+          @include flex-center(row);
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .divider {
+    padding: 0 24px;
+    width: 100%;
+
+    hr {
+      width: 100%;
+      border-width: 1px 0 0 0;
+      border-color: $primary-border-color;
+      opacity: 0.5;
+    }
+  }
+
+  .trackCoverImage {
+    margin-top: auto;
+    width: 241px;
+    height: 241px;
+
+    img {
+      @include square-img-relative-to-axis(x);
+    }
+  }
+}

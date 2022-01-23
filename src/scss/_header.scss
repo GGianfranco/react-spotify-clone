@@ -1,0 +1,83 @@
+.header {
+  @include flex-space-between(row);
+  background: transparent;
+  padding: 0 32px;
+  overflow-x: hidden;
+
+  & > div {
+    @include flex-center(row);
+  }
+
+  .history {
+    @include flex-space-between(row);
+    column-gap: 16px;
+
+    & > div {
+      @include flex-center(row);
+      background-color: #040404;
+      opacity: 0.6;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: $primary-font-color;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .account {
+    @include flex-center(row);
+
+    & > div {
+      width: 132px;
+      height: 37px;
+      border-radius: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include get-bigger-on-hover-with-pointer;
+
+      & > span {
+        width: 60px;
+        height: fit-content;
+        font-size: $x-small-font-size;
+        font-weight: $medium-font-weight;
+        text-align: center;
+        line-height: 18px;
+        letter-spacing: 1.76px;
+        text-transform: uppercase;
+      }
+    }
+
+    .signUp {
+      @include flex-center(row);
+      background: transparent;
+
+      & > span {
+        color: $primary-font-color;
+      }
+    }
+
+    .logIn {
+      @include flex-center(row);
+      background-color: $primary-font-color;
+
+      & > span {
+        color: $primary-bg-color;
+      }
+    }
+
+    .logOut {
+      @include flex-center(row);
+      background-color: $primary-font-color;
+
+      & > span {
+        font-size: $xx-small-font-size;
+        color: $primary-bg-color;
+      }
+    }
+  }
+}

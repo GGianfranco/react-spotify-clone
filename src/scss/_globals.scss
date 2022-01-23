@@ -1,0 +1,20 @@
+:root {
+  /* Colors */
+  --primary-bg-color: #121212;
+  --secondary-bg-color: #000000;
+  --tertiary-bg-color: #181818;
+  --quarternary-bg-color: #070707;
+  --primary-font-color: #fff;
+  --secondary-font-color: #b3b3b3;
+  --tertiary-font-color: #ffffffb3;
+  --primary-btn-color: #1db954;
+  --primary-scroll-bar-color: rgba(255, 255, 255, 0.3);
+  --primary-border-color: #b3b3b3;
+  --primary-hr-bg-color: #282828;
+  --playlist-card-overlay: #272727;
+
+  /* Grid Template Columns */
+  --grid-template-columns-mobile: 16px 4fr minmax(120px, 1fr);
+  --grid-template-columns-tablet: 16px 4fr 2fr minmax(120px, 1fr);
+  --grid-template-columns-desktop: 16px 6fr 4fr 3fr minmax(120px, 1fr);
+}

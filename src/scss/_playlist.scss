@@ -1,0 +1,136 @@
+.playlist {
+  @include flex-start(column);
+  padding: 24px 16px 24px 16px;
+  background: transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media screen and (min-width: 1000px) {
+    & {
+      padding: 24px 32px 24px 32px;
+    }
+  }
+
+  .playlistBanner {
+    color: $primary-font-color;
+    width: 100%;
+    height: 256px;
+    display: flex;
+    max-width: none;
+    padding-bottom: 24px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .cover {
+      flex: 1 1 232px;
+      min-width: 192px;
+      max-width: 232px;
+      height: fit-content;
+      margin-right: 24px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .information {
+      flex: 1;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+
+      .type {
+        font-weight: $medium-font-weight;
+        font-size: $small-font-size;
+        width: 100%;
+        height: 16px;
+        text-transform: uppercase;
+        margin-top: 4px;
+        line-height: 16px;
+      }
+
+      .title {
+        @include fit-parent;
+        padding: 0.08em 0px;
+        font-size: 96px;
+        font-weight: 750;
+        letter-spacing: -0.08em;
+        line-height: 96px;
+        text-transform: none;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .details {
+        font-size: $medium-font-size;
+        font-weight: $medium-font-weight;
+        width: 100%;
+        height: 16px;
+        letter-spacing: normal;
+        line-height: 16px;
+        text-transform: none;
+        margin-top: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-content: flex-start;
+        column-gap: 4px;
+
+        & > *:not(:first-child) {
+          color: $tertiary-font-color;
+        }
+
+        & > *:after {
+          content: " • ";
+          color: $tertiary-font-color;
+        }
+
+        & > *:first-child:before {
+          content: "";
+        }
+
+        & > *:last-child:after {
+          content: "";
+        }
+      }
+    }
+  }
+
+  .playlistControls {
+    @include flex-start(row);
+    width: 100%;
+    height: 104px;
+    padding: 24px 0;
+
+    .playAndPause {
+      @include get-bigger-on-hover-without-pointer;
+      color: $primary-btn-color;
+      width: 66px;
+      height: 66px;
+    }
+
+    .likeButton,
+    .playAndPause {
+      margin-right: 20px;
+    }
+
+    .likeButton,
+    .moreButton {
+      color: $secondary-font-color;
+      width: 32px;
+      height: 32px;
+    }
+
+    .likeButton:hover,
+    .moreButton:hover {
+      color: $primary-font-color;
+    }
+  }
+}

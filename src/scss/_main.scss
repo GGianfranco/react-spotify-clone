@@ -1,0 +1,33 @@
+.main {
+  @include fit-parent;
+  display: grid;
+  grid-template-columns: 241px auto;
+  grid-template-rows: 60px auto 91px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navigation header"
+    "navigation content"
+    "player player";
+
+  .header {
+    grid-area: header;
+  }
+
+  .navigation {
+    grid-area: navigation;
+  }
+
+  .player {
+    grid-area: player;
+  }
+
+  .home.playlist.library.likedSongs {
+    grid-area: content;
+    min-width: 597px;
+  }
+
+  .header.player {
+    min-width: 768px;
+  }
+}

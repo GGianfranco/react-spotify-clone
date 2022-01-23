@@ -1,0 +1,61 @@
+.likedSongsCard {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 4px;
+  background: linear-gradient(149.46deg, #450af5, #8e8ee5 99.16%);
+  color: $primary-font-color;
+  min-height: 200px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .artists {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex: 1;
+    margin-bottom: 12px;
+  }
+
+  .information {
+    min-height: 62px;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 32px;
+    font-weight: $medium-font-weight;
+    letter-spacing: -0.04em;
+    line-height: 36px;
+    text-transform: none;
+
+    span:nth-of-type(1) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      font-size: 32px;
+      font-weight: $medium-font-weight;
+      letter-spacing: -0.04em;
+      line-height: 36px;
+      text-transform: none;
+    }
+
+    span:nth-of-type(2) {
+      font-size: $large-font-size;
+      line-height: 24px;
+      text-transform: lowercase;
+      margin-top: 4px;
+    }
+  }
+}

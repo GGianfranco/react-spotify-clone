@@ -1,0 +1,133 @@
+$breakpoints-up: (
+  "small": "879px",
+  "medium": "1000px",
+  "large": "1200px",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin fit-parent {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flex-center($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-space-between($direction) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-space-around($direction) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-start($direction) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-end($direction) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin content {
+  padding: 24px 16px 24px 16px;
+  background: transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @include breakpoint-up(medium) {
+    & {
+      padding: 24px 32px 24px 32px;
+    }
+  }
+}
+
+// Breakpoints
+@mixin square-img-relative-to-axis($axis) {
+  display: block;
+
+  @if ($axis == x) {
+    width: 100%;
+    height: auto;
+  } @else {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@mixin zero-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin get-bigger {
+  transform: scale(1.1);
+}
+
+@mixin whiten-on-hover-with-pointer {
+  &:hover {
+    cursor: pointer;
+    color: $primary-font-color;
+  }
+}
+
+@mixin whiten-on-hover-without-pointer {
+  &:hover {
+    color: $primary-font-color;
+  }
+}
+
+@mixin get-bigger-on-hover-with-pointer {
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+@mixin get-bigger-on-hover-without-pointer {
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin text-underline-on-hover-with-pointer {
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@mixin text-underline-on-hover-without-pointer {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin whiten-underline-on-hover-with-pointer {
+  &:hover {
+    color: $primary-font-color;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

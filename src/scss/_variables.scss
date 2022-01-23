@@ -1,0 +1,13 @@
+$small-font-weight: 400;
+$medium-font-weight: 700;
+$large-font-weight: 900;
+$xx-small-font-size: 10px;
+$x-small-font-size: 11px;
+$small-font-size: 12px;
+$medium-font-size: 14px;
+$large-font-size: 16px;
+$xx-large-font-size: 18px;
+
+$grid-template-columns-mobile: 16px 4fr minmax(120px, 1fr);
+$grid-template-columns-tablet: 16px 4fr 2fr minmax(120px, 1fr);
+$grid-template-columns-desktop: 16px 6fr 4fr 3fr minmax(120px, 1fr);

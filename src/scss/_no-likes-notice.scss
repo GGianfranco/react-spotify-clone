@@ -1,0 +1,15 @@
+.noLikesNotice {
+  @include flex-center(column);
+  color: $primary-font-color;
+
+  .logo {
+    @include flex-center(column);
+    width: 64px;
+    height: 64px;
+  }
+
+  .description {
+    @include flex-center(column);
+    margin: 0 0 32px 0;
+  }
+}
